@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{empty}   % 隐藏页码（仅保留表格）
+\parindent=0pt      % 取消段落缩进
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htb]
+\small
+\centering
+\begin{tabular}{|l|c|c|c|c|} \hline
+ConvNet config. & \multicolumn{2}{c|}{smallest image side} & top-1 val.\ error (\%) & top-5 val.\ error (\%) \\ \cline{2-3}
+& train ($S$) & test ($Q$) & & \\ \hline
+B & 256 & 224,256,288 & 28.2 & 9.6  \\ \hline
+\multirow{3}{*}{C} & 256 & 224,256,288 & 27.7 & 9.2  \\ \cline{2-5}
+ & 384 & 352,384,416 & 27.8 & 9.2  \\ \cline{2-5}
+ & $\left[256;512\right]$ & 256,384,512 & 26.3 & 8.2  \\ \hline 
+\multirow{3}{*}{D} & 256 & 224,256,288 & 26.6  & 8.6  \\ \cline{2-5}
+ & 384 & 352,384,416 & 26.5  & 8.6  \\ \cline{2-5}
+ & $\left[256;512\right]$ & 256,384,512 & \textbf{24.8}  & \textbf{7.5}  \\ \hline 
+\multirow{3}{*}{E} & 256 & 224,256,288 & 26.9  & 8.7  \\ \cline{2-5}
+ & 384 & 352,384,416 & 26.7  & 8.6  \\ \cline{2-5}
+ & $\left[256;512\right]$ & 256,384,512 & \textbf{24.8}  & \textbf{7.5}  \\ \hline 
+\end{tabular}
+\label{tab:results_multi_scale}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

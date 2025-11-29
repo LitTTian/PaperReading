@@ -1,0 +1,546 @@
+[LOG] EncoderDecoder.forward 输入: [torch.Size([16, 128]), torch.Size([16, 128]), torch.Size([16, 1, 1, 128])]
+[LOG] Sequential.forward 输入: [torch.Size([16, 128])]
+[LOG] Embeddings.forward 输入: [torch.Size([16, 128])]
+[LOG] Embedding.forward 输入: [torch.Size([16, 128])]
+[LOG] Embedding.forward 输出: torch.Size([16, 128, 768])
+[LOG] Embeddings.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionalEncoding.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionalEncoding.forward 输出: torch.Size([16, 128, 768])
+[LOG] Sequential.forward 输出: torch.Size([16, 128, 768])
+[LOG] Encoder.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] EncoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] Encoder.forward 输出: torch.Size([16, 128, 768])
+[LOG] Sequential.forward 输入: [torch.Size([16, 128])]
+[LOG] Embeddings.forward 输入: [torch.Size([16, 128])]
+[LOG] Embedding.forward 输入: [torch.Size([16, 128])]
+[LOG] Embedding.forward 输出: torch.Size([16, 128, 768])
+[LOG] Embeddings.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionalEncoding.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionalEncoding.forward 输出: torch.Size([16, 128, 768])
+[LOG] Sequential.forward 输出: torch.Size([16, 128, 768])
+[LOG] Decoder.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] DecoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输入: [torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 128, 768]), torch.Size([16, 1, 1, 128])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 8, 128, 128])]
+[LOG] Dropout.forward 输出: torch.Size([16, 8, 128, 128])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] MultiHeadedAttention.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 2048])
+[LOG] Linear.forward 输入: [torch.Size([16, 128, 2048])]
+[LOG] Linear.forward 输出: torch.Size([16, 128, 768])
+[LOG] PositionwiseFeedForward.forward 输出: torch.Size([16, 128, 768])
+[LOG] Dropout.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] Dropout.forward 输出: torch.Size([16, 128, 768])
+[LOG] SublayerConnection.forward 输出: torch.Size([16, 128, 768])
+[LOG] DecoderLayer.forward 输出: torch.Size([16, 128, 768])
+[LOG] LayerNorm.forward 输入: [torch.Size([16, 128, 768])]
+[LOG] LayerNorm.forward 输出: torch.Size([16, 128, 768])
+[LOG] Decoder.forward 输出: torch.Size([16, 128, 768])
+[LOG] EncoderDecoder.forward 输出: torch.Size([16, 128, 768])

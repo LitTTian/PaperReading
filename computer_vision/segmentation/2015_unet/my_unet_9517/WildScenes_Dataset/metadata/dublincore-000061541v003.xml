@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcterms:dc xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ https://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd">
+  <dc:title>WildScenes Dataset</dc:title>
+  <dc:creator>Kavisha Vidanapathirana</dc:creator>
+  <dc:subject>Autonomous vehicle systems</dc:subject>
+  <dc:subject>Artificial intelligence not elsewhere classified</dc:subject>
+  <dc:subject>Machine learning not elsewhere classified</dc:subject>
+  <dc:description>WildScenes is a large-scale 2D and 3D semantic segmentation dataset containing both labelled images and lidar point clouds, in natural environments. The data was collected from two natural environments in Brisbane, Australia across multiple revisits. Our release includes 2D images, 2D annotated images, 3D point cloud submaps, 3D annotated point cloud submaps, alongside accurate 6-DoF poses.</dc:description>
+  <dc:publisher>CSIRO</dc:publisher>
+  <dc:contributor>Joshua Knights</dc:contributor>
+  <dc:contributor>Stephen Hausler</dc:contributor>
+  <dc:contributor>Mark Cox</dc:contributor>
+  <dc:contributor>Milad Ramezani</dc:contributor>
+  <dc:contributor>Jason Jooste</dc:contributor>
+  <dc:contributor>Ethan Griffiths</dc:contributor>
+  <dc:contributor>Shaheer Shaheer</dc:contributor>
+  <dc:contributor>Sridha Sridharan</dc:contributor>
+  <dc:contributor>Clinton Fookes</dc:contributor>
+  <dc:contributor>Peyman Moghadam</dc:contributor>
+  <dc:type />
+  <dc:format />
+  <dc:identifier>https://doi.org/10.25919/aetq-q420</dc:identifier>
+  <dc:language />
+  <dcterms:temporal xsi:type="dcterms:Period">start=2021-06-11; end=2021-12-14</dcterms:temporal>
+  <dc:rights />
+</dcterms:dc>

@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{empty}   % 隐藏页码（仅保留表格）
+\parindent=0pt      % 取消段落缩进
+
+\begin{document}
+
+% 第一个表格：ConvNet配置
+% \begin{table}
+\centering
+\small
+\begin{tabular}{|c|c|c|c|c|c|} \hline
+\multicolumn{6}{|c|}{{ConvNet Configuration}} \\ \hline
+A & A-LRN & B & C & D & E \\ \hline
+11 weight & 11 weight & 13 weight & 16 weight & 16 weight & 19 weight \\ 
+layers & layers & layers & layers & layers & layers \\ \hline\hline
+\multicolumn{6}{|c|}{input ($224 \times 224$ RGB image)} \\ \hline
+conv3-64 & conv3-64 & conv3-64 & conv3-64 & conv3-64 & conv3-64 \\ 
+ & \textbf{LRN} & \textbf{conv3-64} & conv3-64 & conv3-64 & conv3-64\\ \hline
+\multicolumn{6}{|c|}{maxpool} \\ \hline
+conv3-128 & conv3-128 & conv3-128 & conv3-128 & conv3-128 & conv3-128 \\ 
+ & & \textbf{conv3-128} & conv3-128 & conv3-128 & conv3-128 \\ \hline
+\multicolumn{6}{|c|}{maxpool} \\ \hline
+conv3-256 & conv3-256 & conv3-256 & conv3-256 & conv3-256 & conv3-256 \\ 
+conv3-256 & conv3-256 & conv3-256 & conv3-256 & conv3-256 & conv3-256 \\ 
+& & & \textbf{conv1-256} & \textbf{conv3-256} & conv3-256 \\ 
+& & & & & \textbf{conv3-256} \\ \hline
+\multicolumn{6}{|c|}{maxpool} \\ \hline
+conv3-512 & conv3-512 & conv3-512 & conv3-512 & conv3-512 & conv3-512 \\ 
+conv3-512 & conv3-512 & conv3-512 & conv3-512 & conv3-512 & conv3-512 \\ 
+& & & \textbf{conv1-512} & \textbf{conv3-512} & conv3-512 \\ 
+& & & & & \textbf{conv3-512} \\ \hline
+\multicolumn{6}{|c|}{maxpool} \\ \hline
+conv3-512 & conv3-512 & conv3-512 & conv3-512 & conv3-512 & conv3-512 \\ 
+conv3-512 & conv3-512 & conv3-512 & conv3-512 & conv3-512 & conv3-512 \\ 
+& & & \textbf{conv1-512} & \textbf{conv3-512} & conv3-512 \\ 
+& & & & & \textbf{conv3-512} \\ \hline
+\multicolumn{6}{|c|}{maxpool} \\ \hline
+\multicolumn{6}{|c|}{FC-4096} \\ \hline
+\multicolumn{6}{|c|}{FC-4096} \\ \hline
+\multicolumn{6}{|c|}{FC-1000} \\ \hline
+\multicolumn{6}{|c|}{soft-max} \\ \hline
+\end{tabular}
+% \end{table}
+\end{document}

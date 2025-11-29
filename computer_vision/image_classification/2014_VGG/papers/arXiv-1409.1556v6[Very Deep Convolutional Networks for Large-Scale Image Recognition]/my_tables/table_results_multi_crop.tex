@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{empty}   % 隐藏页码（仅保留表格）
+\parindent=0pt      % 取消段落缩进
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htb]
+\small
+\centering
+% \caption{\textbf{ConvNet evaluation techniques comparison.}
+% In all experiments the training scale $S$ was sampled from $\left[256;512\right]$, and three test scales $Q$ were considered: $\left\{256,384,512\right\}$.
+% }
+\begin{tabular}{|l|c|c|c|} \hline
+ConvNet config. & Evaluation method & top-1 val.\ error (\%) & top-5 val.\ error (\%) \\ \hline
+\multirow{3}{*}{D} & dense & 24.8  & 7.5  \\ \cline{2-4}
+& multi-crop & 24.6 & 7.5  \\ \cline{2-4}
+& multi-crop \& dense & \textbf{24.4}  & \textbf{7.2}  \\ \hline 
+\multirow{3}{*}{E} & dense & 24.8  & 7.5  \\ \cline{2-4}
+& multi-crop & 24.6 & 7.4  \\ \cline{2-4}
+& multi-crop \& dense & \textbf{24.4}  & \textbf{7.1}  \\ \hline 
+\end{tabular}
+\label{tab:results_multi_crop}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

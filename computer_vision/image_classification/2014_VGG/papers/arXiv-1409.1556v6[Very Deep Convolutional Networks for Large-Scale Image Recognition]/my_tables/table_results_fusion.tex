@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{pbox}
+
+\pagestyle{empty}   % 隐藏页码（仅保留表格）
+\parindent=0pt      % 取消段落缩进
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htb]
+\setlength{\tabcolsep}{2pt}
+\small
+\centering
+% \caption{\textbf{Multiple ConvNet fusion results.}
+% % Combined models are denoted as \\ ``(configuration name/train image size/test image sizes)'' (see~\tblref{tab:results_multi_scale} for individual model results).
+% }
+\begin{tabular}{|l|c|c|c|} \hline
+\multirow{2}{*}{Combined ConvNet models} & \multicolumn{3}{c|}{Error} \\ \cline{2-4}
+ & top-1 val & top-5 val & top-5 test \\ \hline
+ \multicolumn{4}{|c|}{ILSVRC submission} \\ \hline
+ \pbox{11cm}{\vspace{0.2em}
+ (D/256/224,256,288), (D/384/352,384,416), (D/[256;512]/256,384,512) \\ (C/256/224,256,288), (C/384/352,384,416) \\ (E/256/224,256,288), (E/384/352,384,416)} & 24.7 & 7.5 & 7.3 \\ \hline
+ \multicolumn{4}{|c|}{post-submission} \\ \hline
+ \pbox{11cm}{\vspace{0.2em}
+(D/[256;512]/256,384,512), (E/[256;512]/256,384,512)}, dense eval. & 24.0 & 7.1 & 7.0 \\ \hline
+\pbox{11cm}{\vspace{0.2em}
+(D/[256;512]/256,384,512), (E/[256;512]/256,384,512)}, multi-crop & 23.9 & 7.2 & - \\ \hline
+\pbox{11cm}{\vspace{0.2em}
+(D/[256;512]/256,384,512), (E/[256;512]/256,384,512)}, multi-crop \& dense eval. & \textbf{23.7} & \textbf{6.8} & \textbf{6.8} \\ \hline
+\end{tabular}
+\label{tab:results_fusion}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

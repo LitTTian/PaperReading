@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{empty}   % 隐藏页码（仅保留表格）
+\parindent=0pt      % 取消段落缩进
+
+\begin{document}
+
+\begin{table}[htb]
+\small
+\centering
+% \caption{\textbf{ConvNet performance at a single test scale.}
+% }
+\begin{tabular}{|l|c|c|c|c|} \hline
+ConvNet config. & \multicolumn{2}{c|}{smallest image side} & top-1 val.\ error (\%) & top-5 val.\ error (\%) \\ \cline{2-3}
+& train ($S$) & test ($Q$) & & \\ \hline
+A & 256 & 256 & 29.6 & 10.4  \\ \hline
+A-LRN & 256 & 256 & 29.7 & 10.5  \\ \hline
+B & 256 & 256 & 28.7 & 9.9  \\ \hline
+\multirow{3}{*}{C} & 256 & 256 & 28.1 & 9.4  \\ \cline{2-5}
+ & 384 & 384 & 28.1 & 9.3  \\ \cline{2-5}
+ & [256;512] & 384 & 27.3  & 8.8  \\ \hline
+ \multirow{3}{*}{D} & 256 & 256 & 27.0  & 8.8  \\ \cline{2-5}
+ & 384 & 384 & 26.8  & 8.7  \\ \cline{2-5}
+ & [256;512] & 384 & 25.6  & 8.1  \\ \hline
+ \multirow{3}{*}{E} & 256 & 256 & 27.3  & 9.0  \\ \cline{2-5}
+ & 384 & 384 & 26.9  & 8.7  \\ \cline{2-5}
+ & [256;512] & 384 & \textbf{25.5}  & \textbf{8.0}  \\ \hline
+\end{tabular}
+\label{tab:results_single_scale}
+\end{table}
+
+\end{document}

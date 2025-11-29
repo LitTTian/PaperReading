@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{array}
+
+\pagestyle{empty}   % 隐藏页码（仅保留表格）
+\parindent=0pt      % 取消段落缩进
+
+\begin{document}
+
+\begin{table}
+\small
+\centering
+% \caption{\textbf{Number of parameters} (in millions).}
+\begin{tabular}{|l|c|c|c|c|c|c|} \hline
+Network & A,A-LRN & B & C & D & E \\ \hline
+Number of parameters & 133 & 133 & 134 & 138 & 144 \\ \hline
+\end{tabular}
+\label{tab:num_params}
+\end{table}
+
+\end{document}

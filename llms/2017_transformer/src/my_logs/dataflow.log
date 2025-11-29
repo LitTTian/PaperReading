@@ -1,0 +1,98 @@
+[LOG] EncoderDecoder.forward 输入: [torch.Size([1, 6]), torch.Size([1, 6]), torch.Size([1, 1, 1, 6])]
+    # HL: 输入token_ids -> 嵌入表示 + 位置编码
+    [LOG] Sequential.forward 输入: [torch.Size([1, 6])]
+        [LOG] Embeddings.forward 输入: [torch.Size([1, 6])]
+            [LOG] Embedding.forward 输入: [torch.Size([1, 6])] 输出: torch.Size([1, 6, 512])
+        [LOG] Embeddings.forward 输出: torch.Size([1, 6, 512])
+        [LOG] PositionalEncoding.forward 输入: [torch.Size([1, 6, 512])]
+            [LOG] Dropout.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+        [LOG] PositionalEncoding.forward 输出: torch.Size([1, 6, 512])
+    [LOG] Sequential.forward 输出: torch.Size([1, 6, 512])
+
+    [LOG] Encoder.forward 输入: [torch.Size([1, 6, 512]), torch.Size([1, 1, 1, 6])]
+    # HL: 一个Encoder层有6个一模一样的EncoderLayer子层
+    [LOG] EncoderLayer.forward 输入: [torch.Size([1, 6, 512]), torch.Size([1, 1, 1, 6])]
+        # NT: 原始论文(Post-LN): Output = LayerNorm(Sublayer(Input) + Input)
+        # NT: 实践最优(Pre-LN): Output = Sublayer(LayerNorm(Input)) + Input
+        # HL: 第一个MultiHeadedAttention子层
+        [LOG] SublayerConnection.forward 输入: [torch.Size([1, 6, 512])]
+            # SOL: 所以这里先层归一化再进行计算
+            [LOG] LayerNorm.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+            [LOG] MultiHeadedAttention.forward 输入: 
+              [torch.Size([1, 6, 512]), torch.Size([1, 6, 512]), torch.Size([1, 6, 512]), torch.Size([1, 1, 1, 6])]
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Dropout.forward 输入: [torch.Size([1, 1, 8, 6, 6])] 输出: torch.Size([1, 1, 8, 6, 6])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+            [LOG] MultiHeadedAttention.forward 输出: torch.Size([1, 6, 512])
+            [LOG] Dropout.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+        [LOG] SublayerConnection.forward 输出: torch.Size([1, 6, 512])
+        # HL: 前馈子层
+        [LOG] SublayerConnection.forward 输入: [torch.Size([1, 6, 512])]
+            [LOG] LayerNorm.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+            [LOG] PositionwiseFeedForward.forward 输入: [torch.Size([1, 6, 512])]
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 2048])
+                [LOG] Dropout.forward 输入: [torch.Size([1, 6, 2048])] 输出: torch.Size([1, 6, 2048])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 2048])] 输出: torch.Size([1, 6, 512])
+            [LOG] PositionwiseFeedForward.forward 输出: torch.Size([1, 6, 512])
+            [LOG] Dropout.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+        [LOG] SublayerConnection.forward 输出: torch.Size([1, 6, 512])
+    [LOG] EncoderLayer.forward 输出: torch.Size([1, 6, 512]) * 6
+    [LOG] Encoder.forward 输出: torch.Size([1, 6, 512])
+    # HL: 输出层的输入: 
+    [LOG] Sequential.forward 输入: [torch.Size([1, 6])]
+        [LOG] Embeddings.forward 输入: [torch.Size([1, 6])]
+            [LOG] Embedding.forward 输入: [torch.Size([1, 6])] 输出: torch.Size([1, 6, 512])
+        [LOG] Embeddings.forward 输出: torch.Size([1, 6, 512])
+        [LOG] PositionalEncoding.forward 输入: [torch.Size([1, 6, 512])]
+            [LOG] Dropout.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+        [LOG] PositionalEncoding.forward 输出: torch.Size([1, 6, 512])
+    [LOG] Sequential.forward 输出: torch.Size([1, 6, 512])
+    [LOG] Decoder.forward 输入: [torch.Size([1, 6, 512]), torch.Size([1, 6, 512]), torch.Size([1, 1, 1, 6])]
+    # HL: 解码器的Decoder的输入(
+        # HL: 编码器encoder的输出[batch_size, input_seq_len, d_model] + 
+        # HL: 目标序列的嵌入表示[batch_size, tgt_seq_len, d_model] + 
+        # HL: 目标序列的mask [batch_size, 1, 1, tgt_seq_len]
+    # HL: )
+    # HL: 一个Decoder层有6个一模一样的DecoderLayer子层
+    [LOG] DecoderLayer.forward 输入: [torch.Size([1, 6, 512]), torch.Size([1, 6, 512]), torch.Size([1, 1, 1, 6])]
+        # HL: 第一个MultiHeadedAttention子层 -> 论文中的Masked Multi-Head Attention
+        [LOG] SublayerConnection.forward 输入: [torch.Size([1, 6, 512])]
+            [LOG] LayerNorm.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+            [LOG] MultiHeadedAttention.forward 输入: [torch.Size([1, 6, 512]), torch.Size([1, 6, 512]), torch.Size([1, 6, 512])]
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Dropout.forward 输入: [torch.Size([1, 8, 6, 6])] 输出: torch.Size([1, 8, 6, 6])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+            [LOG] MultiHeadedAttention.forward 输出: torch.Size([1, 6, 512])
+            [LOG] Dropout.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+        [LOG] SublayerConnection.forward 输出: torch.Size([1, 6, 512])
+        # HL: 第二个MultiHeadedAttention子层
+        [LOG] SublayerConnection.forward 输入: [torch.Size([1, 6, 512])]
+            [LOG] LayerNorm.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+            [LOG] MultiHeadedAttention.forward 输入: [torch.Size([1, 6, 512]), torch.Size([1, 6, 512]), torch.Size([1, 6, 512]), torch.Size([1, 1, 1, 6])]
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] Dropout.forward 输入: [torch.Size([1, 1, 8, 6, 6])] 输出: torch.Size([1, 1, 8, 6, 6])
+                [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+            [LOG] MultiHeadedAttention.forward 输出: torch.Size([1, 6, 512])
+            [LOG] Dropout.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+        [LOG] SublayerConnection.forward 输出: torch.Size([1, 6, 512])
+        # HL: 第三个前馈子层
+        [LOG] SublayerConnection.forward 输入: [torch.Size([1, 6, 512])]
+                [LOG] LayerNorm.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+                [LOG] PositionwiseFeedForward.forward 输入: [torch.Size([1, 6, 512])]
+                    [LOG] Linear.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 2048])
+                    [LOG] Dropout.forward 输入: [torch.Size([1, 6, 2048])] 输出: torch.Size([1, 6, 2048])
+                    [LOG] Linear.forward 输入: [torch.Size([1, 6, 2048])] 输出: torch.Size([1, 6, 512])
+                [LOG] PositionwiseFeedForward.forward 输出: torch.Size([1, 6, 512])
+                [LOG] Dropout.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+        [LOG] SublayerConnection.forward 输出: torch.Size([1, 6, 512])
+    [LOG] DecoderLayer.forward 输出: torch.Size([1, 6, 512]) * 6
+    [LOG] LayerNorm.forward 输入: [torch.Size([1, 6, 512])] 输出: torch.Size([1, 6, 512])
+    [LOG] Decoder.forward 输出: torch.Size([1, 6, 512])
+[LOG] EncoderDecoder.forward 输出: torch.Size([1, 6, 512])
+模型输出 shape: torch.Size([1, 6, 512])
