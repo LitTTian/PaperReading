@@ -9,8 +9,12 @@ ckpts/
 ckpt/
 results/
 saved_models/
-runs/          # TensorBoard/训练日志+ckpt 目录
+runs/
 *.bin
+
+# 软链接
+slink_*/
+slink_*
 
 # 数据集，模型目录
 datasets/
@@ -25,8 +29,9 @@ repos
 # macOS
 .DS_Store
 
-# VS Code
+# IDE 配置文件
 .vscode/
+.idea/
 
 # 环境变量
 .env
