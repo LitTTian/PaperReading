@@ -1,0 +1,210 @@
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{Bell2016}
+S.~Bell, C.~L. Zitnick, K.~Bala, and R.~Girshick.
+\newblock Inside-outside net: Detecting objects in context with skip pooling
+  and recurrent neural networks.
+\newblock In {\em CVPR}, 2016.
+
+\bibitem{Bulo2017}
+S.~R. Bulo, G.~Neuhold, and P.~Kontschieder.
+\newblock Loss max-pooling for semantic image segmentation.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{Dai2016b}
+J.~Dai, Y.~Li, K.~He, and J.~Sun.
+\newblock {R-FCN}: Object detection via region-based fully convolutional
+  networks.
+\newblock In {\em NIPS}, 2016.
+
+\bibitem{Dalal2005}
+N.~Dalal and B.~Triggs.
+\newblock Histograms of oriented gradients for human detection.
+\newblock In {\em CVPR}, 2005.
+
+\bibitem{Dollar2009}
+P.~Doll{\'a}r, Z.~Tu, P.~Perona, and S.~Belongie.
+\newblock Integral channel features.
+\newblock In {\em BMVC}, 2009.
+
+\bibitem{Erhan2014}
+D.~Erhan, C.~Szegedy, A.~Toshev, and D.~Anguelov.
+\newblock Scalable object detection using deep neural networks.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{Everingham2010}
+M.~Everingham, L.~Van~Gool, C.~K. Williams, J.~Winn, and A.~Zisserman.
+\newblock {The PASCAL Visual Object Classes (VOC) Challenge}.
+\newblock {\em IJCV}, 2010.
+
+\bibitem{Felzenszwalb2010a}
+P.~F. Felzenszwalb, R.~B. Girshick, and D.~McAllester.
+\newblock Cascade object detection with deformable part models.
+\newblock In {\em CVPR}, 2010.
+
+\bibitem{Fu2016}
+C.-Y. Fu, W.~Liu, A.~Ranga, A.~Tyagi, and A.~C. Berg.
+\newblock {DSSD}: Deconvolutional single shot detector.
+\newblock {\em arXiv:1701.06659}, 2016.
+
+\bibitem{Girshick2015a}
+R.~Girshick.
+\newblock {Fast R-CNN}.
+\newblock In {\em ICCV}, 2015.
+
+\bibitem{Girshick2014}
+R.~Girshick, J.~Donahue, T.~Darrell, and J.~Malik.
+\newblock Rich feature hierarchies for accurate object detection and semantic
+  segmentation.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{Detectron2018}
+R.~Girshick, I.~Radosavovic, G.~Gkioxari, P.~Doll\'{a}r, and K.~He.
+\newblock Detectron.
+\newblock \url{https://github.com/facebookresearch/detectron}, 2018.
+
+\bibitem{Hastie2008}
+T.~Hastie, R.~Tibshirani, and J.~Friedman.
+\newblock {\em The elements of statistical learning}.
+\newblock Springer series in statistics Springer, Berlin, 2008.
+
+\bibitem{He2017}
+K.~He, G.~Gkioxari, P.~Doll{\'a}r, and R.~Girshick.
+\newblock {Mask R-CNN}.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{He2014}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun.
+\newblock Spatial pyramid pooling in deep convolutional networks for visual
+  recognition.
+\newblock In {\em ECCV}. 2014.
+
+\bibitem{He2016}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em CVPR}, 2016.
+
+\bibitem{Huang2016}
+J.~Huang, V.~Rathod, C.~Sun, M.~Zhu, A.~Korattikara, A.~Fathi, I.~Fischer,
+  Z.~Wojna, Y.~Song, S.~Guadarrama, and K.~Murphy.
+\newblock Speed/accuracy trade-offs for modern convolutional object detectors.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{Krizhevsky2012}
+A.~Krizhevsky, I.~Sutskever, and G.~Hinton.
+\newblock {ImageNet} classification with deep convolutional neural networks.
+\newblock In {\em NIPS}, 2012.
+
+\bibitem{LeCun1989}
+Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, and
+  L.~D. Jackel.
+\newblock Backpropagation applied to handwritten zip code recognition.
+\newblock {\em Neural computation}, 1989.
+
+\bibitem{Lin2016}
+T.-Y. Lin, P.~Doll{\'a}r, R.~Girshick, K.~He, B.~Hariharan, and S.~Belongie.
+\newblock Feature pyramid networks for object detection.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{Lin2014}
+T.-Y. Lin, M.~Maire, S.~Belongie, J.~Hays, P.~Perona, D.~Ramanan,
+  P.~Doll{\'a}r, and C.~L. Zitnick.
+\newblock {Microsoft COCO}: Common objects in context.
+\newblock In {\em ECCV}, 2014.
+
+\bibitem{Liu2016}
+W.~Liu, D.~Anguelov, D.~Erhan, C.~Szegedy, and S.~Reed.
+\newblock {SSD}: Single shot multibox detector.
+\newblock In {\em ECCV}, 2016.
+
+\bibitem{Long2015}
+J.~Long, E.~Shelhamer, and T.~Darrell.
+\newblock Fully convolutional networks for semantic segmentation.
+\newblock In {\em CVPR}, 2015.
+
+\bibitem{Pinheiro2015}
+P.~O. Pinheiro, R.~Collobert, and P.~Dollar.
+\newblock Learning to segment object candidates.
+\newblock In {\em NIPS}, 2015.
+
+\bibitem{Pinheiro2016}
+P.~O. Pinheiro, T.-Y. Lin, R.~Collobert, and P.~Doll{\'a}r.
+\newblock Learning to refine object segments.
+\newblock In {\em ECCV}, 2016.
+
+\bibitem{Redmon2016}
+J.~Redmon, S.~Divvala, R.~Girshick, and A.~Farhadi.
+\newblock You only look once: Unified, real-time object detection.
+\newblock In {\em CVPR}, 2016.
+
+\bibitem{Redmon2017}
+J.~Redmon and A.~Farhadi.
+\newblock {YOLO9000}: Better, faster, stronger.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{Ren2015a}
+S.~Ren, K.~He, R.~Girshick, and J.~Sun.
+\newblock {Faster R-CNN}: Towards real-time object detection with region
+  proposal networks.
+\newblock In {\em NIPS}, 2015.
+
+\bibitem{Rowley95}
+H.~Rowley, S.~Baluja, and T.~Kanade.
+\newblock Human face detection in visual scenes.
+\newblock Technical Report CMU-CS-95-158R, Carnegie Mellon University, 1995.
+
+\bibitem{Sermanet2014}
+P.~Sermanet, D.~Eigen, X.~Zhang, M.~Mathieu, R.~Fergus, and Y.~LeCun.
+\newblock Overfeat: Integrated recognition, localization and detection using
+  convolutional networks.
+\newblock In {\em ICLR}, 2014.
+
+\bibitem{Shrivastava2016}
+A.~Shrivastava, A.~Gupta, and R.~Girshick.
+\newblock Training region-based object detectors with online hard example
+  mining.
+\newblock In {\em CVPR}, 2016.
+
+\bibitem{Shrivastava2016a}
+A.~Shrivastava, R.~Sukthankar, J.~Malik, and A.~Gupta.
+\newblock Beyond skip connections: Top-down modulation for object detection.
+\newblock {\em arXiv:1612.06851}, 2016.
+
+\bibitem{Sung1994}
+K.-K. Sung and T.~Poggio.
+\newblock Learning and {E}xample {S}election for {O}bject and {P}attern
+  {D}etection.
+\newblock In {\em {MIT A.I. Memo No. 1521}}, 1994.
+
+\bibitem{Szegedy2016a}
+C.~Szegedy, S.~Ioffe, V.~Vanhoucke, and A.~A. Alemi.
+\newblock Inception-v4, inception-resnet and the impact of residual connections
+  on learning.
+\newblock In {\em AAAI Conference on Artificial Intelligence}, 2017.
+
+\bibitem{Uijlings2013}
+J.~R. Uijlings, K.~E. van~de Sande, T.~Gevers, and A.~W. Smeulders.
+\newblock Selective search for object recognition.
+\newblock {\em IJCV}, 2013.
+
+\bibitem{Lecun94}
+R.~Vaillant, C.~Monrocq, and Y.~LeCun.
+\newblock Original approach for the localisation of objects in images.
+\newblock {\em IEE Proc. on Vision, Image, and Signal Processing}, 1994.
+
+\bibitem{Viola2001}
+P.~Viola and M.~Jones.
+\newblock Rapid object detection using a boosted cascade of simple features.
+\newblock In {\em CVPR}, 2001.
+
+\bibitem{Xie2016}
+S.~Xie, R.~Girshick, P.~Doll{\'a}r, Z.~Tu, and K.~He.
+\newblock Aggregated residual transformations for deep neural networks.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{Zitnick2014}
+C.~L. Zitnick and P.~Doll{\'a}r.
+\newblock Edge boxes: Locating object proposals from edges.
+\newblock In {\em ECCV}, 2014.
+
+\end{thebibliography}
