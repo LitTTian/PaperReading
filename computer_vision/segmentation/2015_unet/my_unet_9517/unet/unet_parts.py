@@ -18,7 +18,7 @@ class DoubleConv(nn.Module):
         # 序列模块：两次(卷积+BN+ReLU)
         self.double_conv = nn.Sequential(
             # 第一层卷积：输入通道 -> 中间通道，3×3卷积（捕捉局部特征），padding=1（保持特征图尺寸不变）
-            # H_out = (H_in - kernel_size + 2*padding) // stride + 1
+            # H_out = (H_in - kernel_size + 2*padding) / stride + 1
             # NT: Conv2d中的参数计算: in_channels * kernel_size ** 2 * out_channels + out_channels (bias=True时)
             # NT: BatchNorm2d中的参数计算: 2 * n_channels (gamma和beta),均值和方差为统计量
             # NT: ReLU: 无参数

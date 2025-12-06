@@ -107,17 +107,16 @@ class SingleConv(nn.Module):
         return self.single_conv(x)
 
 class TransUnet(nn.Module):
-    def __init__(
-            self, 
-            n_channels, 
-            n_classes, 
-            embed_dim=768,
-            num_heads=8,
-            num_layers=4,
-            mlp_dim=3072,
-            dropout_rate=0.1,
-            fig_size=(256, 256)
-        ):
+    def __init__(self, 
+                 n_channels, 
+                 n_classes, 
+                 embed_dim=768,
+                 img_size=(256, 256),
+                 num_heads=12,
+                 num_layers=12,
+                 mlp_dim=3072,
+                 dropout_rate=0.1,
+                 ):
         super(TransUnet, self).__init__()
         self.n_channels = n_channels
         self.n_classes = n_classes
@@ -136,7 +135,7 @@ class TransUnet(nn.Module):
         self.down3 = Down(128, 256)  # (B, 256, H/8, W/8)
         self.down4 = Down(256, 512)  # (B, 512, H/16, W/16)
         # 瓶颈层 - Transformer
-        H0, W0 = fig_size  # 假设输入图像大小为256x256，则经过4次下采样后为16x16
+        H0, W0 = img_size  # 假设输入图像大小为256x256，则经过4次下采样后为16x16
         self.patch_embed = PatchEmbedding(in_channels=512, embed_dim=embed_dim, patch_size=1, W=W0 // 16, H=H0 // 16)
         self.transformer_layers = nn.ModuleList([
             TransformerLayer(embed_dim=embed_dim, num_heads=num_heads, mlp_dim=mlp_dim, dropout=dropout_rate)
