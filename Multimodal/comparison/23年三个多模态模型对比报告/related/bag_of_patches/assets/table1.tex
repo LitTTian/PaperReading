@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{ctex} % 中文支持（如无需中文可删除）
+\usepackage{booktabs} % 专业表格线
+\usepackage{multirow} % 多行合并（备用）
+\usepackage{geometry} % 页面布局调整
+\usepackage{color} % 颜色支持
+\usepackage[table]{xcolor} % 表格颜色支持
+\usepackage{ulem} % 下划线命令
+\usepackage{amsmath} % 数学符号支持
+
+% 页面设置（确保表格完整显示）
+\geometry{a4paper, margin=1in} % 边距1英寸，可根据需求调整
+
+\begin{document}
+
+\begin{table*}[t!]
+\footnotesize
+\centering
+\setlength{\tabcolsep}{2pt} % 列间距（保持原设置）
+% 表格宽度自适应，避免溢出
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l c c | c c c c c | c c c c c c @{}}
+\toprule
+Method & LLM & Res. & VQA\textsuperscript{v2} & GQA & VizWiz & SQA\textsuperscript{I} & VQA\textsuperscript{T} & POPE & MME\textsuperscript{P} & MMB & SEED\textsuperscript{I} & LLaVA\textsuperscript{W} & MM-Vet \\
+\midrule
+BLIP-2~ & Vicuna-13B & 224 & 41.0 & 41.0 & 19.6 & 61.0 & 42.5 & 85.3 & 1293.8 & – & 46.4 & 38.1 & 22.4 \\
+
+InstructBLIP~ & Vicuna-7B & 224 & – & 49.2 & 34.5 & 60.5 & 50.1 & – & – & 36.0 & 53.4 & 60.9 & 26.2 \\
+
+InstructBLIP~ & Vicuna-13B & 224 & – & 49.5 & 33.4 & 63.1 & 50.7 & 78.9 & 1212.8 & – & – & 58.2 & 25.6 \\
+
+Shikra~ & Vicuna-13B & 224 & 77.4 & – & – & – & – & – & – & 58.8 & – & – & – \\
+
+Qwen-VL~ & Qwen-7B & 448 & 78.8 & 59.3 & 35.2 & 67.1 & \textbf{63.8} & – & – & 38.2 & 56.3 & – & – \\
+
+Qwen-VL-Chat~ & Qwen-7B & 448 & 78.2 & 57.5 & 38.9 & 68.2 & \underline{61.5} & – & \underline{1487.5} & 60.6 & 58.2 & – & – \\
+
+DeCo~ & Vicuna-7B & 336 & 74.0 & 54.1 & 49.7 & – & 56.2 & 85.9 & 1373.4 & 60.6 & 62.8 & – & – \\
+
+LLaVA-1.5\dag~ & Vicuna-7B & 336 & 78.5 & 62.0 & 50.0 & 66.8 & 58.2 & 85.9 & \textbf{1510.7} & 64.3 & 66.2 & 63.4 & 30.5 \\
+LLaVA-1.5*~ & Vicuna-7B & 336 & 78.4 & 61.9 & 45.7 & 67.6 & 56.2 & 85.8 & 1477.4 & 64.5 & 67.0 & 64.2 & 32.1 \\
+
+\midrule
+\rowcolor{gray!20}
+LLaVA-SP-Cropping & Vicuna-7B & 336 & \underline{79.2} & \underline{62.4} & \underline{50.1} & \textbf{69.7} & 58.7 & \underline{86.4} & 1473.8 & \textbf{65.8} & \textbf{67.6} & \underline{66.7} & \underline{32.2} \\
+
+\rowcolor{gray!20}
+LLaVA-SP-Pooling & Vicuna-7B & 336 & 79.1 & \textbf{62.5} & \textbf{51.6} & \underline{69.0} & 58.3 & \textbf{86.5} & 1475.9 & \underline{65.7} & \underline{67.5} & \textbf{68.3} & \textbf{33.4} \\
+
+\bottomrule
+\end{tabular*}
+\caption{主流视觉语言模型在多模态问答任务上的性能对比} % 表格标题（可修改）
+\label{tab:vllm_performance} % 表格标签（用于交叉引用）
+\end{table*}
+
+\end{document}
