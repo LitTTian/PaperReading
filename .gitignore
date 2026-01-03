@@ -1,5 +1,6 @@
 # arXiv论文
 arXiv*/
+*.pdf
 
 # 缓存文件夹
 __pycache__/
