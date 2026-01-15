@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# copy from https://github.com/MadeAgents/browser-agent/blob/main/agent/agent.py
 
 import base64
 import dataclasses
@@ -221,13 +222,13 @@ class BroswerAgent(Agent):
         Construct prompt and call OpenAI API to get the next action (non-chat mode)
         """
         if len(self.action_history) > 0:
-            last_action = extract_action_content(self.action_history[-1])
+            last_action = extract_action_content(self.action_history[-1])  # 提取最后一步的动作a_{t-1}
             if last_action is None:
                 logger.warning("Last action extract is None, skipping the action result history, will not calculate the result")
                 logger.warning("Last action: {}".format(self.action_history[-1]))
             else:
                 last_action = last_action.replace("```", "").strip()
-                if 'calculate' in last_action:
+                if 'calculate' in last_action:  # NT: 4.3 工程优化，calculate执行计算动作
                     def calculate(expression: str) -> float:
                         result = eval(expression)
                         return f"The result of the expression {last_action} is {result:.2f}"
@@ -237,7 +238,11 @@ class BroswerAgent(Agent):
                     note_content = last_action.replace("```", "").replace("take_note(", "").replace(")", "").strip()
                     self.note_contents.append(note_content)
                 logger.info("Generating progress summary...")
-                self.progress_summary(obs)
+                self.progress_summary(obs)  # HL: m_t = pi(m_{t-1}, o_t, a_{t-1})
+                # NT: 上一时刻的总结 m_{t-1}: self.progress_summary_content
+                # NT: 当前时刻的观测 o_t: obs
+                # NT: 上一时刻的动作 a_{t-1}: last_action, 如果是计算动作，则被包含在self.action_history[-1]中
+                # NT: 如果是take_note动作，则被包含在self.note_contents中
                 logger.info("Progress summary generated:\n{}".format(self.progress_summary_content))
 
         # 1. System message (including action space and next step instruction)
@@ -280,7 +285,7 @@ class BroswerAgent(Agent):
         if not is_gitlab_page:
             is_gitlab_page = "gitlab" in obs['open_pages_titles'][0].lower()
 
-        if is_gitlab_page and "fill(" in action:
+        if is_gitlab_page and "fill(" in action:  # NT: 讲fill(search_box, keyword) -> goto('/search?search=keyword')
             # Extract the bid corresponding to Search GitLab from full_prompt_txt
             search_gitlab_bid = self.extract_search_gitlab_bid(full_prompt_txt)
             logger.info("==============Search GitLab bid=========: {}".format(search_gitlab_bid))
@@ -431,9 +436,9 @@ You will now think step by step and produce your next best action. Reflect on yo
 """
 
         return [
-            {"type": "text", "text": base_instructions},
-            {"type": "text", "text": action_space_text},
-            {"type": "text", "text": next_action_instruction},
+            {"type": "text", "text": base_instructions},  # NT: 基本指令，包含任务描述和要求的输出格式
+            {"type": "text", "text": action_space_text},  # NT: 动作空间描述+示例
+            {"type": "text", "text": next_action_instruction},  # NT: 下一步动作指令
         ]
 
     def get_user_msgs_nonchat(self, obs: dict) -> list[dict]:
@@ -454,13 +459,13 @@ You will now think step by step and produce your next best action. Reflect on yo
         user_msgs.append({"type": "text", "text": "# Currently open tabs\n"})
         for i, (url, title) in enumerate(zip(obs["open_pages_urls"], obs["open_pages_titles"])):
             active_marker = " (active tab)" if i == obs["active_page_index"] else ""
-            user_msgs.append({
+            user_msgs.append({  # NT: 4.2.1 1规则 记录url，用于循环检测
                 "type": "text",
                 "text": f"Tab {i}{active_marker}\n  Title: {title}\n  URL: {url}\n"
             })
 
         # Optional content
-        if self.use_axtree:
+        if self.use_axtree:  # NT: 4.2.1 1规则 采集DOM中的显性提示文本（如“Access Denied”）
             user_msgs.append({
                 "type": "text",
                 "text": f"# Current page Accessibility Tree\n\n{obs['axtree_txt']}\n"
@@ -476,7 +481,7 @@ You will now think step by step and produce your next best action. Reflect on yo
                     "type": "text",
                     "text": "# Current page Screenshot with SOM\n"
                 })
-                user_msgs.append({
+                user_msgs.append({  # NT: 4.2.1 2视觉 是否包含（如“Item Out of Stock”红色提示）
                     "type": "image_url",
                     "image_url": {
                         "url": image_to_jpg_base64_url(obs["screenshot_som"]),
@@ -498,7 +503,7 @@ You will now think step by step and produce your next best action. Reflect on yo
             user_msgs.append({"type": "text", "text": "# History of past actions\n"})
             for action in self.action_history[-self.action_history_limit:]:
                 user_msgs.append({"type": "text", "text": f"\n{action}\n"})
-            if obs.get("last_action_error"):
+            if obs.get("last_action_error"):  # NT: 4.2.1 1规则 最后动作的错误信息
                 user_msgs.append({
                     "type": "text",
                     "text": f"# Error message from last action\n\n{obs['last_action_error']}\n"
@@ -528,10 +533,10 @@ You will now think step by step and produce your next best action. Reflect on yo
 
         user_contents = [
             {"type": "text", "text": f"# goal\n{obs['goal']}\n"},
-            {"type": "text", "text": f"# axtree_txt\n{axtree_txt}\n"},
+            {"type": "text", "text": f"# axtree_txt\n{axtree_txt}\n"},  # NT: D_t: 可访问性树
             {"type": "text", "text": f"# screenshot\n"},
             {"type": "image_url", "image_url": {
-                "url": image_to_jpg_base64_url(obs["screenshot_som"]),
+                "url": image_to_jpg_base64_url(obs["screenshot_som"]),  # NT: V_t: 叠加了DOM元素标记的截图
                 "detail": "auto",
             }},
             {"type": "text", "text": f"# action_history\n{'\n'.join(self.action_history)}\n"},
@@ -540,9 +545,9 @@ You will now think step by step and produce your next best action. Reflect on yo
 
         messages.append({"role": "user", "content": user_contents})
         response = self.openai_client.chat.completions.create(
-            model=self.model_name,
+            model=self.model_name,  # Qwen2.5-VL-72B-Instruct
             messages=messages
-        )
+        )  # NT: 对应论文4.2.1 1.基于视觉语言模型的判别器
         self.progress_summary_content = response.choices[0].message.content.strip()
         return self.progress_summary_content
 

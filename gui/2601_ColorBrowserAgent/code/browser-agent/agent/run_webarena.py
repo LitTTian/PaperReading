@@ -53,7 +53,7 @@ def run_single_task(task_id, task_name, base_result_dir, websites, args):
 
     if os.path.exists(results_dir):
         print("results_dir: ", results_dir)
-        if args.retry:  # Retry only unsuccessful tasks
+        if args.retry:  # NT: 4.2.1 1.基于规则的判别器：只重试那些累计奖励为0的任务
             if os.path.exists(os.path.join(results_dir, "summary_info.json")):
                 with open(os.path.join(results_dir, "summary_info.json"), "r") as f:
                     summary_info = json.load(f)
@@ -70,7 +70,7 @@ def run_single_task(task_id, task_name, base_result_dir, websites, args):
     print(f"Running task {task_name} ...")
 
     nav_multipages = len(websites) > 1
-    if args.tips:
+    if args.tips:  # NT: 对应论文中4.2.2知识注入与持久化，专家整理的tips文件
         tips_path = [os.path.join(this_dir, "tips", f"{args.task}.txt")]
         if len(websites) > 1:
             for website in websites:
