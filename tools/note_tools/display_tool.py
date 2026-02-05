@@ -4,6 +4,11 @@ import fitz  # PyMuPDF
 from tempfile import NamedTemporaryFile
 import uuid
 from IPython.display import Image, display
+import matplotlib.pyplot as plt
+
+def init_matplotlib():
+    plt.rcParams['font.sans-serif'] = ['STHeiti']  # Mac系统上使用黑体中文
+    plt.rcParams['axes.unicode_minus'] = False
 
 def tikz_to_image(
         tikz_code, 
